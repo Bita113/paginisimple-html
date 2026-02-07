@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <title>PaginiSimple – Site-uri simple pentru firme mici</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site-uri simple, rapide și accesibile pentru firme mici. Fără abonamente. Prețuri corecte, în lei.">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site-uri simple pentru firme mici | PaginiSimple</title>
+  <meta name="description" content="Site-uri de prezentare simple, rapide și accesibile pentru firme mici. Fără abonamente. Prețuri clare, în lei." />
 
   <style>
     :root {
-      --primary: #0f172a;
-      --accent: #22c55e;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #334155;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --primary: #2563eb;
+      --secondary: #16a34a;
+      --muted: #64748b;
+      --bg: #f1f5f9;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: Arial, sans-serif;
       background: var(--bg);
-      color: var(--text);
+      color: var(--dark);
       line-height: 1.6;
     }
 
@@ -31,223 +32,233 @@
       max-width: 1100px;
       margin: auto;
       padding: 80px 20px;
-      text-align: center;
     }
 
-    h1, h2 {
-      color: var(--primary);
-      letter-spacing: -0.03em;
+    h1, h2, h3 {
+      margin-bottom: 16px;
     }
-
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.2rem; }
 
     p {
+      color: var(--muted);
       max-width: 700px;
-      margin: 20px auto;
+    }
+
+    .center {
+      text-align: center;
+      margin: auto;
     }
 
     /* HERO */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: linear-gradient(135deg, #1e293b, #020617);
+      color: white;
+      text-align: center;
       padding: 40px 20px;
     }
 
-    .hero p { color: #cbd5f5; }
+    .hero p {
+      color: #cbd5f5;
+      margin: 20px auto;
+    }
 
     .btn {
       display: inline-block;
-      margin: 15px;
-      padding: 14px 28px;
-      border-radius: 999px;
+      padding: 14px 26px;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: 600;
-      background: var(--accent);
-      color: #022c22;
+      font-weight: bold;
+      margin: 10px;
     }
 
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
     }
 
     .card {
-      background: var(--card);
+      background: white;
       padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* MODELE */
+    .model a {
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
     }
 
     /* CALCULATOR */
     .calculator {
-      max-width: 500px;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      max-width: 600px;
       margin: auto;
-      text-align: left;
     }
 
-    .calc-option {
-      display: flex;
-      justify-content: space-between;
+    .calculator label {
+      display: block;
       margin: 15px 0;
     }
 
-    .total {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-align: center;
-      margin-top: 30px;
+    .price {
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--secondary);
+      margin-top: 20px;
+    }
+
+    /* TESTIMONIALE */
+    .testimonial {
+      font-style: italic;
+    }
+
+    .author {
+      font-weight: bold;
+      margin-top: 10px;
+      color: var(--primary);
     }
 
     /* CONTACT */
-    .contact-box {
-      background: linear-gradient(135deg, #22c55e, #4ade80);
-      color: #022c22;
-      border-radius: 24px;
+    .contact {
+      background: linear-gradient(135deg, #2563eb, #16a34a);
+      color: white;
+      border-radius: 14px;
       padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact p {
+      color: #e0f2fe;
+      margin-bottom: 30px;
     }
 
     footer {
       text-align: center;
       padding: 30px;
       font-size: 14px;
-      color: #64748b;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>PaginiSimple</h1>
-    <p>Site-uri simple, rapide și accesibile pentru firme mici care vor să fie găsite online.</p>
-    <a class="btn" href="#calculator">Vezi cât costă</a>
-  </div>
-</div>
-
-<!-- DE CE -->
-<section>
-  <h2>De ce site-uri simple?</h2>
-  <div class="grid">
-    <div class="card">Se încarcă rapid</div>
-    <div class="card">Ușor de înțeles pentru clienți</div>
-    <div class="card">Fără costuri inutile</div>
-    <div class="card">Perfect pentru firme locale</div>
-  </div>
-</section>
-
-<!-- PENTRU CINE -->
-<section>
-  <h2>Pentru cine lucrăm</h2>
-  <div class="grid">
-    <div class="card">⚡ Electricieni</div>
-    <div class="card">💈 Frizerii</div>
-    <div class="card">💅 Beauty / Nails</div>
-    <div class="card">🏥 Cabinete medicale</div>
-    <div class="card">🏠 Servicii locale</div>
-  </div>
-</section>
-
-<!-- MODELE -->
-<section>
-  <h2>Modele realizate</h2>
-  <div class="grid">
-    <div class="card">Frizerie canină</div>
-    <div class="card">Electrician autorizat</div>
-    <div class="card">Cabinet veterinar</div>
-    <div class="card">Barbershop</div>
-  </div>
-</section>
-
-<!-- CALCULATOR -->
-<section id="calculator">
-  <h2>Calculator de preț</h2>
-
-  <div class="calculator">
-    <div class="calc-option">
-      <span>Site de prezentare (bază)</span>
-      <strong>600 lei</strong>
-    </div>
-
-    <label class="calc-option">
-      <span>Pagină proiecte (+150 lei)</span>
-      <input type="checkbox" value="150" class="option">
-    </label>
-
-    <label class="calc-option">
-      <span>Buton WhatsApp & apel (+100 lei)</span>
-      <input type="checkbox" value="100" class="option">
-    </label>
-
-    <label class="calc-option">
-      <span>SEO local basic (+150 lei)</span>
-      <input type="checkbox" value="150" class="option">
-    </label>
-
-    <label class="calc-option">
-      <span>Publicare & găzduire (+100 lei)</span>
-      <input type="checkbox" value="100" class="option">
-    </label>
-
-    <div class="total">
-      Total: <span id="total">600</span> lei
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h1>Site-uri simple pentru firme mici</h1>
+      <p>Pagini de prezentare clare, rapide și accesibile.  
+      Fără abonamente. Fără complicații. Prețuri corecte.</p>
+      <a href="#calculator" class="btn btn-primary">Vezi prețul</a>
+      <a href="#modele" class="btn btn-secondary">Vezi modele</a>
     </div>
   </div>
-</section>
 
-<!-- TESTIMONIALE -->
-<section>
-  <h2>Ce spun clienții</h2>
-  <div class="grid">
-    <div class="card">„Simplu și eficient. Am început să primesc apeluri.”</div>
-    <div class="card">„Exact ce aveam nevoie, fără complicații.”</div>
-    <div class="card">„Preț corect și rezultat bun.”</div>
-  </div>
-</section>
+  <!-- DE CE SITE-URI SIMPLE -->
+  <section>
+    <div class="center">
+      <h2>De ce site-uri simple?</h2>
+      <p>Pentru că majoritatea firmelor mici au nevoie de un site care să aducă apeluri, nu de funcții inutile.</p>
+    </div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-box">
-    <h2>Contact</h2>
-    <p>Scrie-mi direct și discutăm ce ți se potrivește.</p>
-    <a class="btn" href="https://wa.me/40726914400">WhatsApp</a>
-  </div>
-</section>
+    <div class="grid">
+      <div class="card">✔ Se încarcă rapid</div>
+      <div class="card">✔ Ușor de folosit pe telefon</div>
+      <div class="card">✔ Clar pentru client</div>
+      <div class="card">✔ Mai ieftin și mai eficient</div>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section>
-  <h2>Despre PaginiSimple</h2>
-  <p>Ajut firmele mici să aibă o prezență online clară, fără costuri mari și fără abonamente.</p>
-</section>
+  <!-- PENTRU CINE -->
+  <section>
+    <div class="center">
+      <h2>Pentru cine lucrăm</h2>
+    </div>
 
-<footer>
-  © 2026 PaginiSimple – Biță Bogdan
-</footer>
+    <div class="grid">
+      <div class="card">⚡ Electricieni</div>
+      <div class="card">💈 Frizerii & Barbershop</div>
+      <div class="card">💅 Beauty / Nails</div>
+      <div class="card">🏥 Cabinete medicale</div>
+      <div class="card">🏠 Servicii locale</div>
+    </div>
+  </section>
 
-<script>
-  const options = document.querySelectorAll('.option');
-  const totalEl = document.getElementById('total');
-  let base = 600;
+  <!-- MODELE -->
+  <section id="modele">
+    <div class="center">
+      <h2>Modele realizate</h2>
+    </div>
 
-  options.forEach(opt => {
-    opt.addEventListener('change', () => {
-      let total = base;
-      options.forEach(o => {
-        if (o.checked) total += parseInt(o.value);
-      });
-      totalEl.textContent = total;
-    });
-  });
-</script>
+    <div class="grid">
+      <div class="card model"><a href="#" target="_blank">Frizerie canină</a></div>
+      <div class="card model"><a href="#" target="_blank">Electrician autorizat</a></div>
+      <div class="card model"><a href="#" target="_blank">Cabinet medical</a></div>
+      <div class="card model"><a href="#" target="_blank">Barbershop</a></div>
+    </div>
+  </section>
 
-</body>
-</html>
+  <!-- CALCULATOR -->
+  <section id="calculator">
+    <div class="center">
+      <h2>Calculator de preț</h2>
+      <p>Prețuri orientative, afișate direct în lei.</p>
+    </div>
+
+    <div class="calculator">
+      <label>
+        <input type="checkbox" checked disabled />
+        Site de prezentare (1 pagină) – <strong>600 lei</strong>
+      </label>
+
+      <label>
+        <input type="checkbox" id="seo" />
+        Optimizare Google (SEO de bază) – +200 lei
+      </label>
+
+      <label>
+        <input type="checkbox" id="extra" />
+        Secțiuni suplimentare – +150 lei
+      </label>
+
+      <div class="price">
+        Total: <span id="total">600</span> lei
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALE -->
+  <section>
+    <div class="center">
+      <h2>Ce spun clienții</h2>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <p class="testimonial">„Am început să primesc apeluri la câteva zile după lansare.”</p>
+        <div class="author">Andrei – Electrician</div>
+      </div>
+
+      <div class="card">
+        <p class="testimonial">„Simplu, clar și exact ce aveam nevo
