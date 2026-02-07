@@ -1,308 +1,197 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site-uri simple pentru firme mici | PaginiSimple</title>
-  <meta name="description" content="Site-uri de prezentare simple, rapide și accesibile pentru firme mici. Fără abonamente. Prețuri clare, în lei." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site-uri Simple | Web Design Servicii Locale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #334155;
+            --accent: #f59e0b;
+        }
 
-  <style>
-    :root {
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --primary: #2563eb;
-      --secondary: #16a34a;
-      --muted: #64748b;
-      --bg: #f1f5f9;
-    }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); background: var(--light); scroll-behavior: smooth; }
+        
+        header { background: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
 
-    * {
-      box-sizing: border-box;
-    }
+        section { padding: 80px 10%; }
+        h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--dark); }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--dark);
-      line-height: 1.6;
-    }
+        .hero { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #fff; text-align: center; padding: 100px 10%; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.25rem; margin-bottom: 30px; opacity: 0.9; }
+        .btn { display: inline-block; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-outline { border: 2px solid #fff; color: #fff; margin-left: 10px; }
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 20px;
-    }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .feature-card { background: #fff; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .feature-card h3 { margin-bottom: 15px; color: var(--primary); }
 
-    h1, h2, h3 {
-      margin-bottom: 16px;
-    }
+        .targets { background: #fff; }
+        .target-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .tag { background: #e2e8f0; padding: 10px 20px; border-radius: 50px; font-weight: 600; }
 
-    p {
-      color: var(--muted);
-      max-width: 700px;
-    }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .project-card { background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; text-align: center; padding-bottom: 20px; }
+        .project-card h3 { padding: 20px; font-size: 1.1rem; }
+        .btn-sm { padding: 8px 20px; font-size: 0.8rem; background: var(--dark); color: #fff; }
 
-    .center {
-      text-align: center;
-      margin: auto;
-    }
+        .calculator { background: #fff; max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .calc-option { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #eee; }
+        .total-box { margin-top: 30px; text-align: center; background: var(--light); padding: 20px; border-radius: 10px; }
+        #total-price { font-size: 2rem; font-weight: 700; color: var(--primary); }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #1e293b, #020617);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .testimonial { background: #fff; padding: 25px; border-left: 4px solid var(--accent); font-style: italic; }
+        .testimonial span { display: block; margin-top: 15px; font-weight: 700; font-style: normal; color: var(--primary); }
 
-    .hero p {
-      color: #cbd5f5;
-      margin: 20px auto;
-    }
+        .contact-box { text-align: center; background: var(--dark); color: #fff; border-radius: 20px; padding: 50px; }
+        .whatsapp-btn { background: #25d366; color: white; border: none; padding: 15px 40px; font-size: 1.1rem; margin-top: 20px; }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 26px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 10px;
-    }
+        .about { max-width: 800px; margin: 0 auto; text-align: center; }
 
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; opacity: 0.7; }
 
-    .btn-secondary {
-      border: 2px solid white;
-      color: white;
-    }
-
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-    }
-
-    /* MODELE */
-    .model a {
-      color: var(--primary);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* CALCULATOR */
-    .calculator {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .calculator label {
-      display: block;
-      margin: 15px 0;
-    }
-
-    .price {
-      font-size: 32px;
-      font-weight: bold;
-      color: var(--secondary);
-      margin-top: 20px;
-    }
-
-    /* TESTIMONIALE */
-    .testimonial {
-      font-style: italic;
-    }
-
-    .author {
-      font-weight: bold;
-      margin-top: 10px;
-      color: var(--primary);
-    }
-
-    /* CONTACT */
-    .contact {
-      background: linear-gradient(135deg, #2563eb, #16a34a);
-      color: white;
-      border-radius: 14px;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .contact p {
-      color: #e0f2fe;
-      margin-bottom: 30px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-  </style>
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 10px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div>
-      <h1>Site-uri simple pentru firme mici</h1>
-      <p>Pagini de prezentare clare, rapide și accesibile.  
-      Fără abonamente. Fără complicații. Prețuri corecte.</p>
-      <a href="#calculator" class="btn btn-primary">Vezi prețul</a>
-      <a href="#modele" class="btn btn-secondary">Vezi modele</a>
-    </div>
-  </div>
+<header>
+    <div class="logo">WebSimple</div>
+    <nav>
+        <a href="#modele">Modele</a>
+        <a href="#calculator">Preț</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-  <!-- DE CE SITE-URI SIMPLE -->
-  <section>
-    <div class="center">
-      <h2>De ce site-uri simple?</h2>
-      <p>Pentru că majoritatea firmelor mici au nevoie de un site care să aducă apeluri, nu de funcții inutile.</p>
-    </div>
+<section class="hero">
+    <h1>Site-uri simple pentru firme mici</h1>
+    <p>Pagini web clare, rapide și ușor de găsit pe Google. Exact ce are nevoie afacerea ta.</p>
+    <a href="#modele" class="btn btn-outline">Vezi modele</a>
+    <a href="#contact" class="btn btn-primary">Contactează-mă</a>
+</section>
 
-    <div class="grid">
-      <div class="card">✔ Se încarcă rapid</div>
-      <div class="card">✔ Ușor de folosit pe telefon</div>
-      <div class="card">✔ Clar pentru client</div>
-      <div class="card">✔ Mai ieftin și mai eficient</div>
+<section id="de-ce">
+    <h2>De ce un site simplu?</h2>
+    <div class="features-grid">
+        <div class="feature-card"><h3>Ușor de înțeles</h3><p>Clienții găsesc informația imediat, fără pagini inutile.</p></div>
+        <div class="feature-card"><h3>Rapiditate</h3><p>Se încarcă instant pe orice conexiune de internet.</p></div>
+        <div class="feature-card"><h3>Fără costuri ascunse</h3><p>Plătești doar pentru ce ai nevoie, fără abonamente complexe.</p></div>
+        <div class="feature-card"><h3>Mobile First</h3><p>Arată impecabil pe orice telefon mobil.</p></div>
     </div>
-  </section>
+</section>
 
-  <!-- PENTRU CINE -->
-  <section>
-    <div class="center">
-      <h2>Pentru cine lucrăm</h2>
+<section class="targets">
+    <h2>Pentru cine lucrăm</h2>
+    <div class="target-tags">
+        <span class="tag">Electricieni</span>
+        <span class="tag">Frizerii / Barbershop</span>
+        <span class="tag">Beauty / Nails</span>
+        <span class="tag">Cabinete medicale</span>
+        <span class="tag">Servicii locale independente</span>
+        <span class="tag">Instalatori</span>
+        <span class="tag">Mici producători</span>
     </div>
+</section>
 
-    <div class="grid">
-      <div class="card">⚡ Electricieni</div>
-      <div class="card">💈 Frizerii & Barbershop</div>
-      <div class="card">💅 Beauty / Nails</div>
-      <div class="card">🏥 Cabinete medicale</div>
-      <div class="card">🏠 Servicii locale</div>
+<section id="modele">
+    <h2>Modele de site-uri realizate</h2>
+    <div class="portfolio-grid">
+        <div class="project-card"><h3>Frizerie Canină</h3><a href="https://bubu-pet-care.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
+        <div class="project-card"><h3>Electrician</h3><a href="https://stalwart-electro-pro-fix.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
+        <div class="project-card"><h3>Cabinet Veterinar</h3><a href="https://moonveterinary.ro/" target="_blank" class="btn btn-sm">Vezi site</a></div>
+        <div class="project-card"><h3>Defrișări Terenuri</h3><a href="https://eco-clean-land.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
+        <div class="project-card"><h3>Barbershop</h3><a href="https://judicious-elegance-style-pro.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
+        <div class="project-card"><h3>Renovări Interioare</h3><a href="https://renovri-premium-pro.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
     </div>
-  </section>
+</section>
 
-  <!-- MODELE -->
-  <section id="modele">
-    <div class="center">
-      <h2>Modele realizate</h2>
-    </div>
-
-    <div class="grid">
-      <div class="card model"><a href="#" target="_blank">Frizerie canină</a></div>
-      <div class="card model"><a href="#" target="_blank">Electrician autorizat</a></div>
-      <div class="card model"><a href="#" target="_blank">Cabinet medical</a></div>
-      <div class="card model"><a href="#" target="_blank">Barbershop</a></div>
-    </div>
-  </section>
-
-  <!-- CALCULATOR -->
-  <section id="calculator">
-    <div class="center">
-      <h2>Calculator de preț</h2>
-      <p>Prețuri orientative, afișate direct în lei.</p>
-    </div>
-
+<section id="calculator">
+    <h2>Calculator Preț Estimativ</h2>
     <div class="calculator">
-      <label>
-        <input type="checkbox" checked disabled />
-        Site de prezentare (1 pagină) – <strong>600 lei</strong>
-      </label>
-
-      <label>
-        <input type="checkbox" id="seo" />
-        Optimizare Google (SEO de bază) – +200 lei
-      </label>
-
-      <label>
-        <input type="checkbox" id="extra" />
-        Secțiuni suplimentare – +150 lei
-      </label>
-
-      <div class="price">
-        Total: <span id="total">600</span> lei
-      </div>
+        <div class="calc-option">
+            <label>Site One-Page (Standard)</label>
+            <span>600 LEI</span>
+        </div>
+        <div class="calc-option">
+            <label><input type="checkbox" class="price-opt" data-price="200"> Optimizare Google (SEO)</label>
+            <span>+200 LEI</span>
+        </div>
+        <div class="calc-option">
+            <label><input type="checkbox" class="price-opt" data-price="150"> Formular Contact / Programări</label>
+            <span>+150 LEI</span>
+        </div>
+        <div class="calc-option">
+            <label><input type="checkbox" class="price-opt" data-price="100"> Buton WhatsApp Direct</label>
+            <span>+100 LEI</span>
+        </div>
+        <div class="total-box">
+            <p>Total estimativ:</p>
+            <div id="total-price">600 LEI</div>
+            <small>*Acesta este un preț estimativ. Contactați-ne pentru oferta finală.</small>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- TESTIMONIALE -->
-  <section>
-    <div class="center">
-      <h2>Ce spun clienții</h2>
+<section id="testimoni">
+    <h2>Ce spun clienții</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial">"În sfârșit clienții mă găsesc pe Google. Site-ul e simplu și merge perfect pe telefon." <span>- Electrician</span></div>
+        <div class="testimonial">"Nu am vrut ceva complicat. Acum pot trimite link-ul cu serviciile mele direct pe WhatsApp." <span>- Salon Beauty</span></div>
+        <div class="testimonial">"Prețul a fost corect și site-ul a fost gata în 3 zile. Recomand cu încredere!" <span>- Cabinet Vet</span></div>
     </div>
+</section>
 
-    <div class="grid">
-      <div class="card">
-        <p class="testimonial">„Am început să primesc apeluri la câteva zile după lansare.”</p>
-        <div class="author">Andrei – Electrician</div>
-      </div>
-
-      <div class="card">
-        <p class="testimonial">„Simplu, clar și exact ce aveam nevoie.”</p>
-        <div class="author">Maria – Salon Beauty</div>
-      </div>
+<section id="contact">
+    <div class="contact-box">
+        <h2>Contactează-ne acum</h2>
+        <p>Ești la un pas de noul tău site. Hai să vorbim!</p>
+        <p style="margin: 20px 0; font-size: 1.5rem; font-weight: 700;">Biță Bogdan</p>
+        <p>Telefon: <a href="tel:0726914400" style="color: #fff; text-decoration: none;">0726.914.400</a></p>
+        <button class="btn whatsapp-btn" onclick="window.location.href='https://wa.me/40726914400'">Scrie pe WhatsApp</button>
     </div>
-  </section>
+</section>
 
-  <!-- CONTACT -->
-  <section>
-    <div class="contact">
-      <h2>Contact</h2>
-      <p>Scrie-mi și vedem rapid dacă un site te ajută.</p>
-      <a class="btn btn-primary" href="https://wa.me/40726914400">Scrie pe WhatsApp</a>
-    </div>
-  </section>
+<section class="about">
+    <h2>Despre noi</h2>
+    <p>Suntem o echipă mică pasionată de simplitate. Credem că o afacere locală nu are nevoie de site-uri de mii de euro, ci de o prezență online curată, care să pună clientul în contact direct cu meseriașul. Nu folosim limbaj corporatist, ci soluții care funcționează.</p>
+</section>
 
-  <!-- ABOUT -->
-  <section>
-    <div class="center">
-      <h2>Despre mine</h2>
-      <p>Sunt Bogdan și fac site-uri simple pentru firme mici care vor rezultate, nu complicații.</p>
-    </div>
-  </section>
+<footer>
+    <p>&copy; 2024 Site-uri Simple - Biță Bogdan. Toate drepturile rezervate.</p>
+</footer>
 
-  <footer>
-    © 2026 PaginiSimple – Biță Bogdan
-  </footer>
+<script>
+    const checkboxes = document.querySelectorAll('.price-opt');
+    const displayTotal = document.getElementById('total-price');
+    const basePrice = 600;
 
-  <script>
-    const seo = document.getElementById('seo');
-    const extra = document.getElementById('extra');
-    const total = document.getElementById('total');
-
-    function calc() {
-      let price = 600;
-      if (seo.checked) price += 200;
-      if (extra.checked) price += 150;
-      total.textContent = price;
+    function calculate() {
+        let total = basePrice;
+        checkboxes.forEach(cb => {
+            if (cb.checked) {
+                total += parseInt(cb.getAttribute('data-price'));
+            }
+        });
+        displayTotal.innerText = total + ' LEI';
     }
 
-    seo.addEventListener('change', calc);
-    extra.addEventListener('change', calc);
-  </script>
+    checkboxes.forEach(cb => cb.addEventListener('change', calculate));
+</script>
 
 </body>
 </html>
