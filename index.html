@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bogdan Biță | Web Design Premium pentru Afaceri Locale</title>
+    <title>Bogdan Biță | Site Simplu si Rapid Pentru Afaceri Locale</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -24,17 +24,14 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
         
-        /* Smooth Scroll */
         html { scroll-behavior: smooth; }
 
-        /* Navigation */
         nav { position: fixed; top: 0; width: 100%; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border); }
         .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; color: #fff; }
         .logo span { color: var(--primary); }
         .nav-links a { text-decoration: none; color: var(--text-muted); margin-left: 30px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
-        /* Hero Section */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent), radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.05), transparent); }
         .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 25px; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
@@ -45,53 +42,45 @@
         .btn-outline { background: transparent; border: 1px solid var(--glass-border); color: #fff; margin-left: 15px; }
         .btn-outline:hover { background: var(--glass); border-color: var(--primary); }
 
-        /* Sections General */
         section { padding: 120px 10%; position: relative; }
         .section-tag { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; display: block; margin-bottom: 10px; text-align: center; }
         h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; font-weight: 800; }
 
-        /* Features */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .feature-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 40px; border-radius: 24px; transition: 0.4s; }
         .feature-card:hover { border-color: var(--primary); background: rgba(99, 102, 241, 0.05); transform: translateY(-10px); }
         .feature-card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; display: block; }
         .feature-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
 
-        /* Targets Tags */
         .tags-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto; }
         .tag-pill { padding: 10px 24px; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .tag-pill:hover { background: var(--primary); border-color: var(--primary); color: white; }
 
-        /* Portfolio */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .port-item { position: relative; border-radius: 20px; overflow: hidden; background: #0f172a; border: 1px solid var(--glass-border); padding: 30px; transition: 0.4s; text-align: left; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px; }
         .port-item:hover { background: #1e293b; border-color: var(--primary); }
         .port-item h3 { font-size: 1.4rem; margin-bottom: 20px; }
         .port-link { color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px; }
 
-        /* Calculator Premium */
         .calculator-card { max-width: 700px; margin: 0 auto; background: linear-gradient(145deg, #0f172a, #020617); border: 1px solid var(--glass-border); padding: 50px; border-radius: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
-        .calc-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--glass-border); cursor: pointer; }
-        .calc-row input { width: 20px; height: 20px; accent-color: var(--primary); }
+        .calc-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--glass-border); cursor: pointer; user-select: none; }
+        .calc-row:hover { background: rgba(255,255,255,0.02); }
+        .calc-row input { width: 22px; height: 22px; accent-color: var(--primary); cursor: pointer; }
         .price-display { margin-top: 40px; text-align: center; }
         .price-display span { font-size: 3.5rem; font-weight: 800; color: #fff; }
         .price-display p { color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-top: 10px; }
 
-        /* Testimonials */
         .testi-card { background: var(--glass); padding: 30px; border-radius: 20px; position: relative; border-top: 3px solid var(--primary); }
         .testi-card p { font-style: italic; font-size: 1.1rem; color: #cbd5e1; }
         .testi-author { margin-top: 20px; display: block; font-weight: 800; color: var(--primary); text-transform: uppercase; font-size: 0.8rem; }
 
-        /* Contact Section */
         .contact-container { background: var(--primary); border-radius: 40px; padding: 80px 40px; text-align: center; color: white; position: relative; overflow: hidden; }
-        .contact-container h2 { color: white; margin-bottom: 20px; }
+        .contact-container h2 { color: white; margin-bottom: 20px; border: none; }
         .contact-info { font-size: 2rem; font-weight: 800; margin: 30px 0; display: block; color: white; text-decoration: none; }
         .whatsapp-btn { background: #fff; color: var(--primary) !important; padding: 20px 50px; border-radius: 15px; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-        /* About */
         .about-content { max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-muted); font-size: 1.1rem; }
 
-        /* Footer */
         footer { padding: 50px 10%; border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
 
         @media (max-width: 768px) {
@@ -99,6 +88,7 @@
             .nav-links { display: none; }
             .hero h1 { font-size: 3rem; }
             .calculator-card { padding: 30px 20px; }
+            .price-display span { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -200,17 +190,17 @@
             <label>Pachet Start (Site One-Page)</label>
             <span>600 LEI</span>
         </div>
-        <div class="calc-row" onclick="toggleCheck(this)">
-            <label>Optimizare SEO Premium</label>
-            <div><span>+200 LEI</span> <input type="checkbox" class="price-opt" data-price="200"></div>
+        <div class="calc-row">
+            <label for="opt1">Optimizare SEO Premium (+200 LEI)</label>
+            <input type="checkbox" id="opt1" class="price-opt" data-price="200">
         </div>
-        <div class="calc-row" onclick="toggleCheck(this)">
-            <label>Sistem de Programări Online</label>
-            <div><span>+150 LEI</span> <input type="checkbox" class="price-opt" data-price="150"></div>
+        <div class="calc-row">
+            <label for="opt2">Sistem de Programări Online (+150 LEI)</label>
+            <input type="checkbox" id="opt2" class="price-opt" data-price="150">
         </div>
-        <div class="calc-row" onclick="toggleCheck(this)">
-            <label>Integrare WhatsApp & Chat</label>
-            <div><span>+100 LEI</span> <input type="checkbox" class="price-opt" data-price="100"></div>
+        <div class="calc-row">
+            <label for="opt3">Integrare WhatsApp & Chat (+100 LEI)</label>
+            <input type="checkbox" id="opt3" class="price-opt" data-price="100">
         </div>
         <div class="price-display">
             <p>INVESTIȚIE ESTIMATIVĂ</p>
@@ -280,19 +270,20 @@
         displayTotal.innerText = total + ' LEI';
     }
 
-    function toggleCheck(row) {
-        const cb = row.querySelector('input');
-        if(cb) {
-            cb.checked = !cb.checked;
-            calculate();
-        }
-    }
-
-    checkboxes.forEach(cb => {
-        cb.addEventListener('change', (e) => {
-            e.stopPropagation();
-            calculate();
+    // Gestionare click pe rând pentru a bifa checkbox-ul
+    document.querySelectorAll('.calc-row').forEach(row => {
+        row.addEventListener('click', function(e) {
+            const cb = this.querySelector('input[type="checkbox"]');
+            if (cb && e.target !== cb) {
+                cb.checked = !cb.checked;
+                calculate();
+            }
         });
+    });
+
+    // Eveniment separat pentru checkbox (pentru a evita conflictele)
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', calculate);
     });
 </script>
 
