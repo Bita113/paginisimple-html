@@ -261,4 +261,48 @@
       </div>
 
       <div class="card">
-        <p class="testimonial">„Simplu, clar și exact ce aveam nevo
+        <p class="testimonial">„Simplu, clar și exact ce aveam nevoie.”</p>
+        <div class="author">Maria – Salon Beauty</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="contact">
+      <h2>Contact</h2>
+      <p>Scrie-mi și vedem rapid dacă un site te ajută.</p>
+      <a class="btn btn-primary" href="https://wa.me/40726914400">Scrie pe WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="center">
+      <h2>Despre mine</h2>
+      <p>Sunt Bogdan și fac site-uri simple pentru firme mici care vor rezultate, nu complicații.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 PaginiSimple – Biță Bogdan
+  </footer>
+
+  <script>
+    const seo = document.getElementById('seo');
+    const extra = document.getElementById('extra');
+    const total = document.getElementById('total');
+
+    function calc() {
+      let price = 600;
+      if (seo.checked) price += 200;
+      if (extra.checked) price += 150;
+      total.textContent = price;
+    }
+
+    seo.addEventListener('change', calc);
+    extra.addEventListener('change', calc);
+  </script>
+
+</body>
+</html>
