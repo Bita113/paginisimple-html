@@ -1,286 +1,230 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site-uri simple pentru firme mici | PaginiSimple</title>
-  <meta name="description" content="Site-uri moderne, rapide și convingătoare pentru firme mici. Fără abonamente. Design premium." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site-uri premium pentru firme mici | PaginiSimple</title>
+  <meta name="description" content="Site-uri moderne pentru firme mici. Design premium, fără abonamente. Preț corect și transparent.">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #6366f1;
-      --secondary: #22c55e;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --muted: #94a3b8;
+      --primary:#6366f1;
+      --dark:#0f172a;
+      --muted:#64748b;
+      --bg:#f8fafc;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing:border-box; }
 
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f8fafc, #eef2ff);
-      color: var(--dark);
-      line-height: 1.6;
+      margin:0;
+      font-family:Inter, sans-serif;
+      background:var(--bg);
+      color:var(--dark);
+      line-height:1.6;
     }
 
     section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 20px;
-      text-align: center;
+      max-width:1100px;
+      margin:auto;
+      padding:90px 20px;
     }
 
-    h1, h2 {
-      margin-bottom: 16px;
-      letter-spacing: -0.03em;
+    h1,h2 {
+      letter-spacing:-0.03em;
     }
 
-    h1 {
-      font-size: 3rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-    }
+    h1 { font-size:3rem; }
+    h2 { font-size:2.2rem; }
 
     p {
-      color: #475569;
-      max-width: 700px;
-      margin: auto;
+      color:var(--muted);
+      max-width:700px;
     }
 
     /* HERO */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at top, #6366f1 0%, #312e81 60%);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#312e81,#6366f1);
+      color:white;
+      text-align:center;
+      padding:40px 20px;
     }
 
-    .hero-content {
-      animation: fadeUp 1s ease-out;
-    }
-
-    .hero p {
-      color: #e0e7ff;
-      margin-top: 20px;
-    }
-
-    .buttons {
-      margin-top: 40px;
-    }
+    .hero p { color:#e0e7ff; }
 
     .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      margin: 10px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      display:inline-block;
+      padding:14px 28px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      margin:10px;
+      transition:0.3s;
     }
 
     .btn-primary {
-      background: white;
-      color: #312e81;
+      background:white;
+      color:#312e81;
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      transform:translateY(-3px);
+      box-shadow:0 15px 40px rgba(0,0,0,.25);
     }
 
-    .btn-secondary {
-      border: 2px solid white;
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-3px);
+    .btn-outline {
+      border:2px solid white;
+      color:white;
     }
 
     /* GRID */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      margin-top: 60px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-top:60px;
     }
 
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
+      transition:.3s;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+      transform:translateY(-8px);
+      box-shadow:0 30px 60px rgba(0,0,0,.12);
     }
 
-    /* TESTIMONIALE */
-    .testimonial {
-      font-style: italic;
-      font-size: 0.95rem;
-      margin-bottom: 20px;
+    /* CALCULATOR */
+    .calculator {
+      background:white;
+      border-radius:30px;
+      padding:50px 30px;
+      box-shadow:0 30px 80px rgba(0,0,0,.15);
+      margin-top:50px;
     }
 
-    .author {
-      font-weight: 600;
-      color: var(--primary);
+    label {
+      font-weight:600;
+      display:block;
+      margin-top:25px;
     }
 
-    /* CONTACT */
-    .contact-box {
-      background: linear-gradient(135deg, #6366f1, #22c55e);
-      color: white;
-      border-radius: 30px;
-      padding: 70px 20px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    select {
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid #ddd;
+      margin-top:8px;
+      font-size:16px;
     }
 
-    .contact-box p {
-      color: #ecfeff;
+    .price-box {
+      margin-top:40px;
+      text-align:center;
+      font-size:2.5rem;
+      font-weight:700;
+      color:var(--primary);
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #64748b;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      text-align:center;
+      padding:30px;
+      font-size:14px;
+      color:#94a3b8;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Site-uri simple pentru firme mici</h1>
-      <p>Fac pagini web de prezentare pentru firme locale, gândite să ajute clienții să vă găsească mai ușor și să vă contacteze rapid.</p>
-      <div class="buttons">
-        <a class="btn btn-primary" href="#contact">Contactează-mă</a>
-        <a class="btn btn-secondary" href="proiecte.html">Vezi proiecte</a>
-      </div>
-    </div>
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Site-uri care arată scump,<br>la preț corect</h1>
+    <p>Design premium pentru firme mici care vor rezultate reale. Fără abonamente. Fără bullshit.</p>
+    <a class="btn btn-primary" href="#calculator">Calculează prețul</a>
+    <a class="btn btn-outline" href="https://wa.me/40726914400">WhatsApp</a>
   </div>
+</div>
 
-  <!-- CUI -->
- <section>
-  <h2>Lucrez cu</h2>
-  <p>Firme locale care vor o prezență online curată și convingătoare.</p>
-
-  <div class="grid">
-    <div class="card">⚡ Electricieni</div>
-    <div class="card">💈 Frizerii & Barbershop</div>
-    <div class="card">💅 Beauty & Nails</div>
-    <div class="card">🏥 Cabinete medicale</div>
-    <div class="card">🐶 Servicii pentru animale</div>
-    <div class="card">🏗️ Construcții & renovări</div>
-    <div class="card">🌲 Curățenie & defrișări</div>
-    <div class="card">🧰 Alte servicii locale</div>
-  </div>
-</section>
-
+<!-- BENEFICII -->
 <section>
-  <h2>Modele de site-uri</h2>
-  <p>Câteva exemple de pagini realizate, adaptabile pentru orice firmă.</p>
+  <h2>De ce PaginiSimple</h2>
+  <p>Arată ca un site de 1000$, dar plătești doar ce ai nevoie.</p>
 
   <div class="grid">
-    <div class="card">
-      <h3>🐾 Frizerie canină</h3>
-      <a class="btn btn-primary" href="https://bubu-pet-care.base44.app/" target="_blank">Vezi demo</a>
-    </div>
+    <div class="card">⚡ Rapid și optimizat SEO</div>
+    <div class="card">📱 Perfect pe telefon</div>
+    <div class="card">🎯 Gândit pentru conversii</div>
+    <div class="card">💸 Preț fix, fără abonamente</div>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>⚡ Electrician</h3>
-      <a class="btn btn-primary" href="https://stalwart-electro-pro-fix.base44.app/" target="_blank">Vezi demo</a>
-    </div>
+<!-- CALCULATOR -->
+<section id="calculator">
+  <h2>Calculator de preț</h2>
+  <p>Alege ce ai nevoie și vezi imediat un preț estimativ.</p>
 
-    <div class="card">
-      <h3>💈 Barbershop</h3>
-      <a class="btn btn-primary" href="https://judicious-elegance-style-pro.base44.app/" target="_blank">Vezi demo</a>
-    </div>
+  <div class="calculator">
+    <label>Tip firmă</label>
+    <select id="business">
+      <option value="0">Alege...</option>
+      <option value="300">Servicii locale</option>
+      <option value="400">Salon / Beauty</option>
+      <option value="500">Cabinet medical</option>
+    </select>
 
-    <div class="card">
-      <h3>🏗️ Renovări</h3>
-      <a class="btn btn-primary" href="https://renovri-premium-pro.base44.app/" target="_blank">Vezi demo</a>
+    <label>Număr pagini</label>
+    <select id="pages">
+      <option value="0">Alege...</option>
+      <option value="0">1 pagină</option>
+      <option value="100">3–5 pagini</option>
+      <option value="200">Peste 5 pagini</option>
+    </select>
+
+    <label>Funcționalități extra</label>
+    <select id="extras">
+      <option value="0">Fără extra</option>
+      <option value="100">Formular contact</option>
+      <option value="150">WhatsApp + Call</option>
+      <option value="250">SEO avansat</option>
+    </select>
+
+    <div class="price-box" id="price">0 €</div>
+
+    <div style="text-align:center;margin-top:30px;">
+      <a class="btn btn-primary" id="cta" href="https://wa.me/40726914400">
+        Cere oferta finală
+      </a>
     </div>
   </div>
 </section>
 
-  <!-- CE OFER -->
-  <section>
-    <h2>Ce primești</h2>
+<footer>
+  © 2026 PaginiSimple – Biță Bogdan
+</footer>
 
-    <div class="grid">
-      <div class="card">Design modern, premium</div>
-      <div class="card">Optimizat perfect pentru telefon</div>
-      <div class="card">Buton apel & WhatsApp</div>
-      <div class="card">Fără abonamente sau costuri ascunse</div>
-    </div>
-  </section>
+<script>
+  const selects = document.querySelectorAll("select");
+  const priceBox = document.getElementById("price");
 
-  <!-- TESTIMONIALE -->
-  <section>
-    <h2>Ce spun clienții</h2>
+  function updatePrice() {
+    let total = 0;
+    selects.forEach(s => total += parseInt(s.value || 0));
+    priceBox.textContent = total + " €";
+  }
 
-    <div class="grid">
-      <div class="card">
-        <p class="testimonial">„Site-ul arată extrem de profesionist. Am început să primesc apeluri din prima săptămână.”</p>
-        <div class="author">Andrei M. – Electrician</div>
-      </div>
-
-      <div class="card">
-        <p class="testimonial">„Clienții ne spun că site-ul inspiră încredere. Exact ce ne trebuia.”</p>
-        <div class="author">Maria D. – Salon Beauty</div>
-      </div>
-
-      <div class="card">
-        <p class="testimonial">„Simplu, rapid și foarte bine făcut. Mult peste așteptări.”</p>
-        <div class="author">Radu P. – Servicii locale</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-box">
-      <h2>Hai să discutăm</h2>
-      <p>Dacă vrei un site care chiar să te reprezinte, scrie-mi direct.</p>
-      <br><br>
-      <a class="btn btn-primary" href="https://wa.me/40726914400">Scrie pe WhatsApp</a>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 PaginiSimple – Biță Bogdan
-  </footer>
+  selects.forEach(s => s.addEventListener("change", updatePrice));
+</script>
 
 </body>
 </html>
