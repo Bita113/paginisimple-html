@@ -3,199 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Site-uri premium pentru firme mici | PaginiSimple</title>
-  <meta name="description" content="Site-uri moderne, rapide și clare pentru firme mici. Design premium, optimizat pentru Google și telefon." />
+  <meta name="description" content="Site-uri moderne, rapide și convingătoare pentru firme mici. Fără abonamente. Design premium." />
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --black: #0f0f0f;
-      --gray: #666;
-      --light: #f6f6f6;
-      --accent: #0f62fe;
-      --radius: 14px;
+      --primary: #6366f1;
+      --secondary: #22c55e;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --muted: #94a3b8;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      color: var(--black);
-      background: #fff;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #f8fafc, #eef2ff);
+      color: var(--dark);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
+    section {
       max-width: 1100px;
       margin: auto;
-      padding: 0 20px;
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      color: #475569;
+      max-width: 700px;
+      margin: auto;
     }
 
     /* HERO */
-    header {
-      padding: 120px 0 90px;
-      background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
-    }
-
-    header h1 {
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
-
-    header p {
-      font-size: 20px;
-      color: var(--gray);
-      max-width: 650px;
-      margin-bottom: 40px;
-    }
-
-    .actions {
+    .hero {
+      min-height: 100vh;
       display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #6366f1 0%, #312e81 60%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      animation: fadeUp 1s ease-out;
+    }
+
+    .hero p {
+      color: #e0e7ff;
+      margin-top: 20px;
+    }
+
+    .buttons {
+      margin-top: 40px;
     }
 
     .btn {
-      padding: 16px 26px;
-      border-radius: var(--radius);
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 10px;
+      border-radius: 999px;
+      text-decoration: none;
       font-weight: 600;
-      font-size: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: all .2s ease;
+      transition: all 0.3s ease;
     }
 
-    .btn.primary {
-      background: var(--black);
-      color: #fff;
+    .btn-primary {
+      background: white;
+      color: #312e81;
     }
 
-    .btn.primary:hover {
-      transform: translateY(-2px);
-      opacity: .9;
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
-    .btn.secondary {
-      background: var(--light);
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
     }
 
-    /* SECTIONS */
-    section {
-      padding: 90px 0;
-    }
-
-    section h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    section p.lead {
-      color: var(--gray);
-      max-width: 700px;
-      font-size: 18px;
-      margin-bottom: 50px;
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
     }
 
     /* GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
+      gap: 30px;
+      margin-top: 60px;
     }
 
     .card {
-      background: #fff;
-      border: 1px solid #eaeaea;
-      border-radius: var(--radius);
+      background: white;
       padding: 30px;
-      transition: all .2s ease;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,.06);
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
     }
 
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
+    /* TESTIMONIALE */
+    .testimonial {
+      font-style: italic;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
     }
 
-    .card p {
-      color: var(--gray);
-      font-size: 15px;
-    }
-
-    /* FEATURES */
-    .features {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .features li {
-      background: var(--light);
-      padding: 24px;
-      border-radius: var(--radius);
-      font-weight: 500;
+    .author {
+      font-weight: 600;
+      color: var(--primary);
     }
 
     /* CONTACT */
     .contact-box {
-      background: var(--black);
-      color: #fff;
-      border-radius: 22px;
-      padding: 70px 40px;
-      text-align: center;
-    }
-
-    .contact-box h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
+      background: linear-gradient(135deg, #6366f1, #22c55e);
+      color: white;
+      border-radius: 30px;
+      padding: 70px 20px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
     }
 
     .contact-box p {
-      color: #ccc;
-      margin-bottom: 30px;
-      font-size: 18px;
+      color: #ecfeff;
     }
 
-    .contact-box .btn {
-      background: #fff;
-      color: var(--black);
-    }
-
-    /* FOOTER */
     footer {
-      padding: 40px 20px;
       text-align: center;
-      color: var(--gray);
+      padding: 30px;
       font-size: 14px;
+      color: #64748b;
     }
 
-    @media (max-width: 600px) {
-      header {
-        padding: 80px 0 60px;
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-      section {
-        padding: 60px 0;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
@@ -204,66 +179,72 @@
 <body>
 
   <!-- HERO -->
-  <header>
-    <div class="container">
-      <h1>Site-uri premium<br>pentru firme mici</h1>
-      <p>
-        Construiesc site-uri moderne, rapide și clare, care arată profesionist
-        și aduc clienți reali din Google.
-      </p>
-      <div class="actions">
-        <a class="btn primary" href="#contact">Contactează-mă</a>
-        <a class="btn secondary" href="proiecte.html">Vezi proiecte</a>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Site-uri care chiar vând</h1>
+      <p>Design premium pentru firme mici care vor să pară mari. Rapid, clar și fără abonamente.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#contact">Contactează-mă</a>
+        <a class="btn btn-secondary" href="proiecte.html">Vezi proiecte</a>
       </div>
     </div>
-  </header>
+  </div>
 
-  <!-- CLIENTI -->
+  <!-- CUI -->
   <section>
-    <div class="container">
-      <h2>Lucrez cu</h2>
-      <p class="lead">
-        Firme locale care vor o prezență online serioasă, fără site-uri complicate.
-      </p>
+    <h2>Lucrez cu</h2>
+    <p>Firme locale care vor o prezență online curată și convingătoare.</p>
 
-      <div class="grid">
-        <div class="card"><h3>Electricieni</h3><p>Servicii locale</p></div>
-        <div class="card"><h3>Frizerii & Barbershop</h3><p>Programări rapide</p></div>
-        <div class="card"><h3>Beauty / Nails</h3><p>Imagine profesională</p></div>
-        <div class="card"><h3>Cabinete medicale</h3><p>Claritate & încredere</p></div>
-      </div>
+    <div class="grid">
+      <div class="card">⚡ Electricieni</div>
+      <div class="card">💈 Frizerii & Barbershop</div>
+      <div class="card">💅 Beauty & Nails</div>
+      <div class="card">🏥 Cabinete medicale</div>
+      <div class="card">🏠 Servicii locale</div>
     </div>
   </section>
 
   <!-- CE OFER -->
-  <section style="background:#fafafa">
-    <div class="container">
-      <h2>Ce primești</h2>
+  <section>
+    <h2>Ce primești</h2>
 
-      <ul class="features">
-        <li>Design modern, premium</li>
-        <li>Optimizare pentru telefon</li>
-        <li>Structură SEO corectă</li>
-        <li>Buton apel & WhatsApp</li>
-        <li>Fără abonamente lunare</li>
-        <li>Încărcare foarte rapidă</li>
-      </ul>
+    <div class="grid">
+      <div class="card">Design modern, premium</div>
+      <div class="card">Optimizat perfect pentru telefon</div>
+      <div class="card">Buton apel & WhatsApp</div>
+      <div class="card">Fără abonamente sau costuri ascunse</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALE -->
+  <section>
+    <h2>Ce spun clienții</h2>
+
+    <div class="grid">
+      <div class="card">
+        <p class="testimonial">„Site-ul arată extrem de profesionist. Am început să primesc apeluri din prima săptămână.”</p>
+        <div class="author">Andrei M. – Electrician</div>
+      </div>
+
+      <div class="card">
+        <p class="testimonial">„Clienții ne spun că site-ul inspiră încredere. Exact ce ne trebuia.”</p>
+        <div class="author">Maria D. – Salon Beauty</div>
+      </div>
+
+      <div class="card">
+        <p class="testimonial">„Simplu, rapid și foarte bine făcut. Mult peste așteptări.”</p>
+        <div class="author">Radu P. – Servicii locale</div>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <h2>Hai să lucrăm împreună</h2>
-        <p>
-          Spune-mi ce firmă ai și ce vrei să obții online.
-        </p>
-        <a class="btn" href="https://wa.me/40726914400">Scrie pe WhatsApp</a>
-        <p style="margin-top:20px;font-size:14px;">
-          sau sună: <strong>0726 914 400</strong>
-        </p>
-      </div>
+    <div class="contact-box">
+      <h2>Hai să discutăm</h2>
+      <p>Dacă vrei un site care chiar să te reprezinte, scrie-mi direct.</p>
+      <br><br>
+      <a class="btn btn-primary" href="https://wa.me/40726914400">Scrie pe WhatsApp</a>
     </div>
   </section>
 
