@@ -2,211 +2,231 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
+  <title>PaginiSimple – Site-uri simple pentru firme mici</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site-uri premium pentru firme mici | PaginiSimple</title>
-  <meta name="description" content="Site-uri moderne pentru firme mici. Design premium, fără abonamente. Preț corect și transparent.">
+  <meta name="description" content="Site-uri simple, rapide și accesibile pentru firme mici. Fără abonamente. Prețuri corecte, în lei.">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary:#6366f1;
-      --dark:#0f172a;
-      --muted:#64748b;
-      --bg:#f8fafc;
+      --primary: #0f172a;
+      --accent: #22c55e;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #334155;
     }
 
-    * { box-sizing:border-box; }
+    * { box-sizing: border-box; }
 
     body {
-      margin:0;
-      font-family:Inter, sans-serif;
-      background:var(--bg);
-      color:var(--dark);
-      line-height:1.6;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     section {
-      max-width:1100px;
-      margin:auto;
-      padding:90px 20px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+      text-align: center;
     }
 
-    h1,h2 {
-      letter-spacing:-0.03em;
+    h1, h2 {
+      color: var(--primary);
+      letter-spacing: -0.03em;
     }
 
-    h1 { font-size:3rem; }
-    h2 { font-size:2.2rem; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
 
     p {
-      color:var(--muted);
-      max-width:700px;
+      max-width: 700px;
+      margin: 20px auto;
     }
 
     /* HERO */
     .hero {
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,#312e81,#6366f1);
-      color:white;
-      text-align:center;
-      padding:40px 20px;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
     }
 
-    .hero p { color:#e0e7ff; }
+    .hero p { color: #cbd5f5; }
 
     .btn {
-      display:inline-block;
-      padding:14px 28px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-      margin:10px;
-      transition:0.3s;
+      display: inline-block;
+      margin: 15px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      background: var(--accent);
+      color: #022c22;
     }
 
-    .btn-primary {
-      background:white;
-      color:#312e81;
-    }
-
-    .btn-primary:hover {
-      transform:translateY(-3px);
-      box-shadow:0 15px 40px rgba(0,0,0,.25);
-    }
-
-    .btn-outline {
-      border:2px solid white;
-      color:white;
-    }
-
-    /* GRID */
     .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
-      margin-top:60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
     }
 
     .card {
-      background:white;
-      padding:30px;
-      border-radius:20px;
-      box-shadow:0 20px 40px rgba(0,0,0,.08);
-      transition:.3s;
-    }
-
-    .card:hover {
-      transform:translateY(-8px);
-      box-shadow:0 30px 60px rgba(0,0,0,.12);
+      background: var(--card);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     /* CALCULATOR */
     .calculator {
-      background:white;
-      border-radius:30px;
-      padding:50px 30px;
-      box-shadow:0 30px 80px rgba(0,0,0,.15);
-      margin-top:50px;
+      max-width: 500px;
+      margin: auto;
+      text-align: left;
     }
 
-    label {
-      font-weight:600;
-      display:block;
-      margin-top:25px;
+    .calc-option {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
     }
 
-    select {
-      width:100%;
-      padding:14px;
-      border-radius:12px;
-      border:1px solid #ddd;
-      margin-top:8px;
-      font-size:16px;
+    .total {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: center;
+      margin-top: 30px;
     }
 
-    .price-box {
-      margin-top:40px;
-      text-align:center;
-      font-size:2.5rem;
-      font-weight:700;
-      color:var(--primary);
+    /* CONTACT */
+    .contact-box {
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+      border-radius: 24px;
+      padding: 60px 20px;
     }
 
     footer {
-      text-align:center;
-      padding:30px;
-      font-size:14px;
-      color:#94a3b8;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #64748b;
     }
   </style>
 </head>
+
 <body>
 
 <!-- HERO -->
 <div class="hero">
   <div>
-    <h1>Site-uri care arată scump,<br>la preț corect</h1>
-    <p>Design premium pentru firme mici care vor rezultate reale. Fără abonamente. Fără bullshit.</p>
-    <a class="btn btn-primary" href="#calculator">Calculează prețul</a>
-    <a class="btn btn-outline" href="https://wa.me/40726914400">WhatsApp</a>
+    <h1>PaginiSimple</h1>
+    <p>Site-uri simple, rapide și accesibile pentru firme mici care vor să fie găsite online.</p>
+    <a class="btn" href="#calculator">Vezi cât costă</a>
   </div>
 </div>
 
-<!-- BENEFICII -->
+<!-- DE CE -->
 <section>
-  <h2>De ce PaginiSimple</h2>
-  <p>Arată ca un site de 1000$, dar plătești doar ce ai nevoie.</p>
-
+  <h2>De ce site-uri simple?</h2>
   <div class="grid">
-    <div class="card">⚡ Rapid și optimizat SEO</div>
-    <div class="card">📱 Perfect pe telefon</div>
-    <div class="card">🎯 Gândit pentru conversii</div>
-    <div class="card">💸 Preț fix, fără abonamente</div>
+    <div class="card">Se încarcă rapid</div>
+    <div class="card">Ușor de înțeles pentru clienți</div>
+    <div class="card">Fără costuri inutile</div>
+    <div class="card">Perfect pentru firme locale</div>
+  </div>
+</section>
+
+<!-- PENTRU CINE -->
+<section>
+  <h2>Pentru cine lucrăm</h2>
+  <div class="grid">
+    <div class="card">⚡ Electricieni</div>
+    <div class="card">💈 Frizerii</div>
+    <div class="card">💅 Beauty / Nails</div>
+    <div class="card">🏥 Cabinete medicale</div>
+    <div class="card">🏠 Servicii locale</div>
+  </div>
+</section>
+
+<!-- MODELE -->
+<section>
+  <h2>Modele realizate</h2>
+  <div class="grid">
+    <div class="card">Frizerie canină</div>
+    <div class="card">Electrician autorizat</div>
+    <div class="card">Cabinet veterinar</div>
+    <div class="card">Barbershop</div>
   </div>
 </section>
 
 <!-- CALCULATOR -->
 <section id="calculator">
   <h2>Calculator de preț</h2>
-  <p>Alege ce ai nevoie și vezi imediat un preț estimativ.</p>
 
   <div class="calculator">
-    <label>Tip firmă</label>
-    <select id="business">
-      <option value="0">Alege...</option>
-      <option value="300">Servicii locale</option>
-      <option value="400">Salon / Beauty</option>
-      <option value="500">Cabinet medical</option>
-    </select>
+    <div class="calc-option">
+      <span>Site de prezentare (bază)</span>
+      <strong>600 lei</strong>
+    </div>
 
-    <label>Număr pagini</label>
-    <select id="pages">
-      <option value="0">Alege...</option>
-      <option value="0">1 pagină</option>
-      <option value="100">3–5 pagini</option>
-      <option value="200">Peste 5 pagini</option>
-    </select>
+    <label class="calc-option">
+      <span>Pagină proiecte (+150 lei)</span>
+      <input type="checkbox" value="150" class="option">
+    </label>
 
-    <label>Funcționalități extra</label>
-    <select id="extras">
-      <option value="0">Fără extra</option>
-      <option value="100">Formular contact</option>
-      <option value="150">WhatsApp + Call</option>
-      <option value="250">SEO avansat</option>
-    </select>
+    <label class="calc-option">
+      <span>Buton WhatsApp & apel (+100 lei)</span>
+      <input type="checkbox" value="100" class="option">
+    </label>
 
-    <div class="price-box" id="price">0 €</div>
+    <label class="calc-option">
+      <span>SEO local basic (+150 lei)</span>
+      <input type="checkbox" value="150" class="option">
+    </label>
 
-    <div style="text-align:center;margin-top:30px;">
-      <a class="btn btn-primary" id="cta" href="https://wa.me/40726914400">
-        Cere oferta finală
-      </a>
+    <label class="calc-option">
+      <span>Publicare & găzduire (+100 lei)</span>
+      <input type="checkbox" value="100" class="option">
+    </label>
+
+    <div class="total">
+      Total: <span id="total">600</span> lei
     </div>
   </div>
+</section>
+
+<!-- TESTIMONIALE -->
+<section>
+  <h2>Ce spun clienții</h2>
+  <div class="grid">
+    <div class="card">„Simplu și eficient. Am început să primesc apeluri.”</div>
+    <div class="card">„Exact ce aveam nevoie, fără complicații.”</div>
+    <div class="card">„Preț corect și rezultat bun.”</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-box">
+    <h2>Contact</h2>
+    <p>Scrie-mi direct și discutăm ce ți se potrivește.</p>
+    <a class="btn" href="https://wa.me/40726914400">WhatsApp</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <h2>Despre PaginiSimple</h2>
+  <p>Ajut firmele mici să aibă o prezență online clară, fără costuri mari și fără abonamente.</p>
 </section>
 
 <footer>
@@ -214,16 +234,19 @@
 </footer>
 
 <script>
-  const selects = document.querySelectorAll("select");
-  const priceBox = document.getElementById("price");
+  const options = document.querySelectorAll('.option');
+  const totalEl = document.getElementById('total');
+  let base = 600;
 
-  function updatePrice() {
-    let total = 0;
-    selects.forEach(s => total += parseInt(s.value || 0));
-    priceBox.textContent = total + " €";
-  }
-
-  selects.forEach(s => s.addEventListener("change", updatePrice));
+  options.forEach(opt => {
+    opt.addEventListener('change', () => {
+      let total = base;
+      options.forEach(o => {
+        if (o.checked) total += parseInt(o.value);
+      });
+      totalEl.textContent = total;
+    });
+  });
 </script>
 
 </body>
