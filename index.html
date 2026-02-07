@@ -3,179 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site-uri Simple | Web Design Servicii Locale</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Bogdan Biță | Web Design Premium pentru Afaceri Locale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --text: #334155;
-            --accent: #f59e0b;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #0f172a;
+            --accent: #10b981;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --bg: #020617;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); background: var(--light); scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
         
-        header { background: #fff; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
-        nav a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
 
-        section { padding: 80px 10%; }
-        h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--dark); }
+        /* Navigation */
+        nav { position: fixed; top: 0; width: 100%; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border); }
+        .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; color: #fff; }
+        .logo span { color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--text-muted); margin-left: 30px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
 
-        .hero { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #fff; text-align: center; padding: 100px 10%; }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.25rem; margin-bottom: 30px; opacity: 0.9; }
-        .btn { display: inline-block; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; cursor: pointer; border: none; }
-        .btn-primary { background: var(--primary); color: #fff; }
-        .btn-outline { border: 2px solid #fff; color: #fff; margin-left: 10px; }
+        /* Hero Section */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent), radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.05), transparent); }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 25px; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
+        
+        .btn { padding: 16px 35px; border-radius: 12px; font-weight: 700; text-decoration: none; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: inline-block; cursor: pointer; border: none; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4); background: var(--primary-dark); }
+        .btn-outline { background: transparent; border: 1px solid var(--glass-border); color: #fff; margin-left: 15px; }
+        .btn-outline:hover { background: var(--glass); border-color: var(--primary); }
 
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .feature-card { background: #fff; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .feature-card h3 { margin-bottom: 15px; color: var(--primary); }
+        /* Sections General */
+        section { padding: 120px 10%; position: relative; }
+        .section-tag { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; display: block; margin-bottom: 10px; text-align: center; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; font-weight: 800; }
 
-        .targets { background: #fff; }
-        .target-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .tag { background: #e2e8f0; padding: 10px 20px; border-radius: 50px; font-weight: 600; }
+        /* Features */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feature-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 40px; border-radius: 24px; transition: 0.4s; }
+        .feature-card:hover { border-color: var(--primary); background: rgba(99, 102, 241, 0.05); transform: translateY(-10px); }
+        .feature-card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; display: block; }
+        .feature-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
 
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .project-card { background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; text-align: center; padding-bottom: 20px; }
-        .project-card h3 { padding: 20px; font-size: 1.1rem; }
-        .btn-sm { padding: 8px 20px; font-size: 0.8rem; background: var(--dark); color: #fff; }
+        /* Targets Tags */
+        .tags-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto; }
+        .tag-pill { padding: 10px 24px; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .tag-pill:hover { background: var(--primary); border-color: var(--primary); color: white; }
 
-        .calculator { background: #fff; max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .calc-option { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #eee; }
-        .total-box { margin-top: 30px; text-align: center; background: var(--light); padding: 20px; border-radius: 10px; }
-        #total-price { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        /* Portfolio */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .port-item { position: relative; border-radius: 20px; overflow: hidden; background: #0f172a; border: 1px solid var(--glass-border); padding: 30px; transition: 0.4s; text-align: left; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px; }
+        .port-item:hover { background: #1e293b; border-color: var(--primary); }
+        .port-item h3 { font-size: 1.4rem; margin-bottom: 20px; }
+        .port-link { color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px; }
 
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .testimonial { background: #fff; padding: 25px; border-left: 4px solid var(--accent); font-style: italic; }
-        .testimonial span { display: block; margin-top: 15px; font-weight: 700; font-style: normal; color: var(--primary); }
+        /* Calculator Premium */
+        .calculator-card { max-width: 700px; margin: 0 auto; background: linear-gradient(145deg, #0f172a, #020617); border: 1px solid var(--glass-border); padding: 50px; border-radius: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+        .calc-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--glass-border); cursor: pointer; }
+        .calc-row input { width: 20px; height: 20px; accent-color: var(--primary); }
+        .price-display { margin-top: 40px; text-align: center; }
+        .price-display span { font-size: 3.5rem; font-weight: 800; color: #fff; }
+        .price-display p { color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-top: 10px; }
 
-        .contact-box { text-align: center; background: var(--dark); color: #fff; border-radius: 20px; padding: 50px; }
-        .whatsapp-btn { background: #25d366; color: white; border: none; padding: 15px 40px; font-size: 1.1rem; margin-top: 20px; }
+        /* Testimonials */
+        .testi-card { background: var(--glass); padding: 30px; border-radius: 20px; position: relative; border-top: 3px solid var(--primary); }
+        .testi-card p { font-style: italic; font-size: 1.1rem; color: #cbd5e1; }
+        .testi-author { margin-top: 20px; display: block; font-weight: 800; color: var(--primary); text-transform: uppercase; font-size: 0.8rem; }
 
-        .about { max-width: 800px; margin: 0 auto; text-align: center; }
+        /* Contact Section */
+        .contact-container { background: var(--primary); border-radius: 40px; padding: 80px 40px; text-align: center; color: white; position: relative; overflow: hidden; }
+        .contact-container h2 { color: white; margin-bottom: 20px; }
+        .contact-info { font-size: 2rem; font-weight: 800; margin: 30px 0; display: block; color: white; text-decoration: none; }
+        .whatsapp-btn { background: #fff; color: var(--primary) !important; padding: 20px 50px; border-radius: 15px; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; opacity: 0.7; }
+        /* About */
+        .about-content { max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-muted); font-size: 1.1rem; }
+
+        /* Footer */
+        footer { padding: 50px 10%; border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            header { flex-direction: column; gap: 10px; }
-            nav a { margin: 0 10px; }
+            section { padding: 80px 5%; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3rem; }
+            .calculator-card { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">WebSimple</div>
-    <nav>
-        <a href="#modele">Modele</a>
-        <a href="#calculator">Preț</a>
+<nav>
+    <div class="logo">BOGDAN<span>BIȚĂ</span></div>
+    <div class="nav-links">
+        <a href="#de-ce">Beneficii</a>
+        <a href="#modele">Portofoliu</a>
+        <a href="#calculator">Calculator</a>
         <a href="#contact">Contact</a>
-    </nav>
-</header>
+    </div>
+</nav>
 
 <section class="hero">
-    <h1>Site-uri simple pentru firme mici</h1>
-    <p>Pagini web clare, rapide și ușor de găsit pe Google. Exact ce are nevoie afacerea ta.</p>
-    <a href="#modele" class="btn btn-outline">Vezi modele</a>
-    <a href="#contact" class="btn btn-primary">Contactează-mă</a>
-</section>
-
-<section id="de-ce">
-    <h2>De ce un site simplu?</h2>
-    <div class="features-grid">
-        <div class="feature-card"><h3>Ușor de înțeles</h3><p>Clienții găsesc informația imediat, fără pagini inutile.</p></div>
-        <div class="feature-card"><h3>Rapiditate</h3><p>Se încarcă instant pe orice conexiune de internet.</p></div>
-        <div class="feature-card"><h3>Fără costuri ascunse</h3><p>Plătești doar pentru ce ai nevoie, fără abonamente complexe.</p></div>
-        <div class="feature-card"><h3>Mobile First</h3><p>Arată impecabil pe orice telefon mobil.</p></div>
+    <span class="section-tag" data-aos="fade-down">Web Design de Impact</span>
+    <h1 data-aos="fade-up">Prezență digitală<br>fără bătăi de cap.</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Creăm site-uri de prezentare premium pentru antreprenori locali. Clare, rapide și optimizate pentru a converti vizitatorii în clienți.</p>
+    <div data-aos="fade-up" data-aos-delay="200">
+        <a href="#contact" class="btn btn-primary">Începe proiectul</a>
+        <a href="#modele" class="btn btn-outline">Vezi Portofoliu</a>
     </div>
 </section>
 
-<section class="targets">
-    <h2>Pentru cine lucrăm</h2>
-    <div class="target-tags">
-        <span class="tag">Electricieni</span>
-        <span class="tag">Frizerii / Barbershop</span>
-        <span class="tag">Beauty / Nails</span>
-        <span class="tag">Cabinete medicale</span>
-        <span class="tag">Servicii locale independente</span>
-        <span class="tag">Instalatori</span>
-        <span class="tag">Mici producători</span>
+<section id="de-ce">
+    <span class="section-tag">Eficiență</span>
+    <h2>De ce site-uri simple?</h2>
+    <div class="grid-3">
+        <div class="feature-card" data-aos="fade-up">
+            <i class="fas fa-bolt"></i>
+            <h3>Viteză Extremă</h3>
+            <p>Fără cod inutil. Site-ul se încarcă instantaneu, oferind o experiență premium clienților tăi.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Mobile First</h3>
+            <p>Peste 80% din trafic vine de pe telefon. Designul nostru este gândit în primul rând pentru mobil.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-search-location"></i>
+            <h3>SEO Local</h3>
+            <p>Te ajutăm să fii găsit de clienții din zona ta atunci când caută serviciile oferite de tine.</p>
+        </div>
+    </div>
+</section>
+
+<section id="cine">
+    <h2>Pentru cine construim</h2>
+    <div class="tags-container" data-aos="zoom-in">
+        <span class="tag-pill">Electricieni</span>
+        <span class="tag-pill">Frizerii</span>
+        <span class="tag-pill">Barbershops</span>
+        <span class="tag-pill">Beauty & Nails</span>
+        <span class="tag-pill">Cabinete Medicale</span>
+        <span class="tag-pill">Veterinari</span>
+        <span class="tag-pill">Instalatori</span>
+        <span class="tag-pill">Renovări</span>
+        <span class="tag-pill">Avocați</span>
     </div>
 </section>
 
 <section id="modele">
-    <h2>Modele de site-uri realizate</h2>
+    <span class="section-tag">Live Preview</span>
+    <h2>Proiecte Recente</h2>
     <div class="portfolio-grid">
-        <div class="project-card"><h3>Frizerie Canină</h3><a href="https://bubu-pet-care.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
-        <div class="project-card"><h3>Electrician</h3><a href="https://stalwart-electro-pro-fix.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
-        <div class="project-card"><h3>Cabinet Veterinar</h3><a href="https://moonveterinary.ro/" target="_blank" class="btn btn-sm">Vezi site</a></div>
-        <div class="project-card"><h3>Defrișări Terenuri</h3><a href="https://eco-clean-land.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
-        <div class="project-card"><h3>Barbershop</h3><a href="https://judicious-elegance-style-pro.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
-        <div class="project-card"><h3>Renovări Interioare</h3><a href="https://renovri-premium-pro.base44.app/" target="_blank" class="btn btn-sm">Vezi site</a></div>
+        <div class="port-item" data-aos="fade-up">
+            <h3>Frizerie Canină</h3>
+            <a href="https://bubu-pet-care.base44.app/" target="_blank" class="port-link">Vezi Live <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="port-item" data-aos="fade-up" data-aos-delay="50">
+            <h3>Electrician Pro</h3>
+            <a href="https://stalwart-electro-pro-fix.base44.app/" target="_blank" class="port-link">Vezi Live <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="port-item" data-aos="fade-up" data-aos-delay="100">
+            <h3>Cabinet Veterinar</h3>
+            <a href="https://moonveterinary.ro/" target="_blank" class="port-link">Vezi Live <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="port-item" data-aos="fade-up" data-aos-delay="150">
+            <h3>Defrișări Terenuri</h3>
+            <a href="https://eco-clean-land.base44.app/" target="_blank" class="port-link">Vezi Live <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="port-item" data-aos="fade-up" data-aos-delay="200">
+            <h3>Barber Elite</h3>
+            <a href="https://judicious-elegance-style-pro.base44.app/" target="_blank" class="port-link">Vezi Live <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="port-item" data-aos="fade-up" data-aos-delay="250">
+            <h3>Renovări Premium</h3>
+            <a href="https://renovri-premium-pro.base44.app/" target="_blank" class="port-link">Vezi Live <i class="fas fa-external-link-alt"></i></a>
+        </div>
     </div>
 </section>
 
 <section id="calculator">
-    <h2>Calculator Preț Estimativ</h2>
-    <div class="calculator">
-        <div class="calc-option">
-            <label>Site One-Page (Standard)</label>
+    <span class="section-tag">Transparență</span>
+    <h2>Configurator Preț</h2>
+    <div class="calculator-card" data-aos="zoom-in">
+        <div class="calc-row">
+            <label>Pachet Start (Site One-Page)</label>
             <span>600 LEI</span>
         </div>
-        <div class="calc-option">
-            <label><input type="checkbox" class="price-opt" data-price="200"> Optimizare Google (SEO)</label>
-            <span>+200 LEI</span>
+        <div class="calc-row" onclick="toggleCheck(this)">
+            <label>Optimizare SEO Premium</label>
+            <div><span>+200 LEI</span> <input type="checkbox" class="price-opt" data-price="200"></div>
         </div>
-        <div class="calc-option">
-            <label><input type="checkbox" class="price-opt" data-price="150"> Formular Contact / Programări</label>
-            <span>+150 LEI</span>
+        <div class="calc-row" onclick="toggleCheck(this)">
+            <label>Sistem de Programări Online</label>
+            <div><span>+150 LEI</span> <input type="checkbox" class="price-opt" data-price="150"></div>
         </div>
-        <div class="calc-option">
-            <label><input type="checkbox" class="price-opt" data-price="100"> Buton WhatsApp Direct</label>
-            <span>+100 LEI</span>
+        <div class="calc-row" onclick="toggleCheck(this)">
+            <label>Integrare WhatsApp & Chat</label>
+            <div><span>+100 LEI</span> <input type="checkbox" class="price-opt" data-price="100"></div>
         </div>
-        <div class="total-box">
-            <p>Total estimativ:</p>
-            <div id="total-price">600 LEI</div>
-            <small>*Acesta este un preț estimativ. Contactați-ne pentru oferta finală.</small>
+        <div class="price-display">
+            <p>INVESTIȚIE ESTIMATIVĂ</p>
+            <span id="total-price">600 LEI</span>
+            <p style="color: var(--text-muted); font-style: italic;">*Preț final stabilit după discuția tehnică.</p>
         </div>
     </div>
 </section>
 
 <section id="testimoni">
-    <h2>Ce spun clienții</h2>
-    <div class="testimonials-grid">
-        <div class="testimonial">"În sfârșit clienții mă găsesc pe Google. Site-ul e simplu și merge perfect pe telefon." <span>- Electrician</span></div>
-        <div class="testimonial">"Nu am vrut ceva complicat. Acum pot trimite link-ul cu serviciile mele direct pe WhatsApp." <span>- Salon Beauty</span></div>
-        <div class="testimonial">"Prețul a fost corect și site-ul a fost gata în 3 zile. Recomand cu încredere!" <span>- Cabinet Vet</span></div>
+    <h2>Feedback Clienți</h2>
+    <div class="grid-3">
+        <div class="testi-card" data-aos="fade-right">
+            <p>"Colaborarea cu Bogdan a fost peste așteptări. Site-ul arată impecabil și e foarte intuitiv."</p>
+            <span class="testi-author">Salon Beauty, Brașov</span>
+        </div>
+        <div class="testi-card" data-aos="fade-up">
+            <p>"În sfârșit am o pagină unde clienții pot vedea portofoliul meu de lucrări electrice."</p>
+            <span class="testi-author">Electrician Autorizat</span>
+        </div>
+        <div class="testi-card" data-aos="fade-left">
+            <p>"Rapid, profesionist și fără termeni tehnici complicați. Recomand 100%."</p>
+            <span class="testi-author">Manager Barbershop</span>
+        </div>
     </div>
 </section>
 
 <section id="contact">
-    <div class="contact-box">
-        <h2>Contactează-ne acum</h2>
-        <p>Ești la un pas de noul tău site. Hai să vorbim!</p>
-        <p style="margin: 20px 0; font-size: 1.5rem; font-weight: 700;">Biță Bogdan</p>
-        <p>Telefon: <a href="tel:0726914400" style="color: #fff; text-decoration: none;">0726.914.400</a></p>
-        <button class="btn whatsapp-btn" onclick="window.location.href='https://wa.me/40726914400'">Scrie pe WhatsApp</button>
+    <div class="contact-container" data-aos="flip-up">
+        <h2>Hai să dăm viață proiectului tău</h2>
+        <p>Suntem gata să construim site-ul care să îți reprezinte afacerea cu mândrie.</p>
+        <a href="tel:0726914400" class="contact-info">0726.914.400</a>
+        <br>
+        <a href="https://wa.me/40726914400" class="btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Scrie pe WhatsApp
+        </a>
     </div>
 </section>
 
-<section class="about">
-    <h2>Despre noi</h2>
-    <p>Suntem o echipă mică pasionată de simplitate. Credem că o afacere locală nu are nevoie de site-uri de mii de euro, ci de o prezență online curată, care să pună clientul în contact direct cu meseriașul. Nu folosim limbaj corporatist, ci soluții care funcționează.</p>
+<section id="about">
+    <div class="about-content" data-aos="fade-up">
+        <span class="section-tag">Cine suntem</span>
+        <h2>Misiunea Noastră</h2>
+        <p>Suntem o echipă dedicată micilor antreprenori care au nevoie de rezultate, nu de promisiuni. Credem în web design-ul care funcționează de la prima vizită, eliminând barierele dintre tine și clienții tăi. Biță Bogdan nu este doar un nume, este garanția unui parteneriat onest și uman.</p>
+    </div>
 </section>
 
 <footer>
-    <p>&copy; 2024 Site-uri Simple - Biță Bogdan. Toate drepturile rezervate.</p>
+    <p>&copy; 2024 Bogdan Biță - Web Design Premium. Toate drepturile rezervate.</p>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    AOS.init({ duration: 1000, once: true });
+
     const checkboxes = document.querySelectorAll('.price-opt');
     const displayTotal = document.getElementById('total-price');
     const basePrice = 600;
@@ -190,7 +280,20 @@
         displayTotal.innerText = total + ' LEI';
     }
 
-    checkboxes.forEach(cb => cb.addEventListener('change', calculate));
+    function toggleCheck(row) {
+        const cb = row.querySelector('input');
+        if(cb) {
+            cb.checked = !cb.checked;
+            calculate();
+        }
+    }
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', (e) => {
+            e.stopPropagation();
+            calculate();
+        });
+    });
 </script>
 
 </body>
