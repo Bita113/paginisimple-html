@@ -47,7 +47,7 @@
         .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 25px; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; }
         
-        /* Fixed Hero Buttons */
+        /* Hero Buttons - Fixed for overlap */
         .hero-btns { display: flex; gap: 15px; justify-content: center; align-items: center; }
         .btn { padding: 16px 35px; border-radius: 12px; font-weight: 700; text-decoration: none; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: inline-block; cursor: pointer; border: none; text-align: center; }
         .btn-primary { background: var(--primary); color: white; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
@@ -55,7 +55,7 @@
         .btn-outline { background: transparent; border: 1px solid var(--glass-border); color: #fff; }
         .btn-outline:hover { background: var(--glass); border-color: var(--primary); }
 
-        section { padding: 120px 10%; position: relative; }
+        section { padding: 100px 10%; position: relative; }
         .section-tag { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; display: block; margin-bottom: 10px; text-align: center; }
         h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; font-weight: 800; }
 
@@ -69,40 +69,45 @@
         /* Tags */
         .tags-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto; }
         .tag-pill { padding: 10px 24px; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .tag-pill:hover { background: var(--primary); border-color: var(--primary); color: white; }
 
         /* Portfolio */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .port-item { position: relative; border-radius: 20px; background: #0f172a; border: 1px solid var(--glass-border); padding: 30px; transition: 0.4s; text-align: left; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px; }
-        .port-item:hover { background: #1e293b; border-color: var(--primary); }
-        .port-item h3 { font-size: 1.4rem; margin-bottom: 20px; }
-        .port-link { color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .port-item { position: relative; border-radius: 20px; background: #0f172a; border: 1px solid var(--glass-border); padding: 30px; transition: 0.4s; text-align: left; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
+        .port-item:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .port-item h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .port-item p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
+        .port-link { color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
 
         /* Calculator */
-        .calculator-card { max-width: 700px; margin: 0 auto; background: linear-gradient(145deg, #0f172a, #020617); border: 1px solid var(--glass-border); padding: 50px; border-radius: 30px; }
-        .calc-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--glass-border); cursor: pointer; user-select: none; }
-        .calc-row:hover { background: rgba(255,255,255,0.02); }
-        .calc-row input { width: 22px; height: 22px; accent-color: var(--primary); cursor: pointer; }
-        .price-display { margin-top: 40px; text-align: center; }
-        .price-display span { font-size: 3.5rem; font-weight: 800; color: #fff; }
+        .calculator-card { max-width: 600px; margin: 0 auto; background: #0f172a; border: 1px solid var(--glass-border); padding: 40px; border-radius: 30px; }
+        .calc-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--glass-border); }
+        .calc-row input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--primary); cursor: pointer; }
+        
+        /* Stepper Pages */
+        .stepper { display: flex; align-items: center; gap: 15px; background: var(--glass); padding: 5px 15px; border-radius: 12px; border: 1px solid var(--glass-border); }
+        .step-btn { background: var(--primary); color: white; border: none; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-weight: 800; transition: 0.3s; }
+        .step-btn:hover { background: var(--primary-dark); }
+        #page-count { font-weight: 800; min-width: 25px; text-align: center; font-size: 1.1rem; }
+
+        .price-display { margin-top: 40px; text-align: center; background: rgba(99, 102, 241, 0.05); padding: 30px; border-radius: 20px; border: 1px solid var(--glass-border); }
+        .price-display p { font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 5px; color: var(--text-muted); }
+        .price-display span { font-size: 3rem; font-weight: 800; color: #fff; }
 
         /* Contact */
-        .contact-container { background: var(--primary); border-radius: 40px; padding: 80px 40px; text-align: center; color: white; overflow: hidden; }
-        .contact-info { font-size: 2rem; font-weight: 800; margin: 30px 0; display: block; color: white; text-decoration: none; }
-        .whatsapp-btn { background: #fff; color: var(--primary) !important; padding: 20px 50px; border-radius: 15px; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 10px; }
+        .contact-container { background: var(--primary); border-radius: 40px; padding: 60px 40px; text-align: center; color: white; }
+        .contact-info { font-size: 2rem; font-weight: 800; margin: 20px 0; display: block; color: white; text-decoration: none; }
+        .whatsapp-btn { background: #fff; color: var(--primary) !important; padding: 18px 40px; border-radius: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
 
         footer { padding: 50px 10%; border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+        footer a { color: var(--text-muted); text-decoration: none; margin-top: 10px; display: inline-block; }
 
         /* Media Queries for Mobile */
         @media (max-width: 768px) {
             section { padding: 80px 5%; }
             .nav-links { display: none; }
             .hero h1 { font-size: 2.8rem; }
-            
-            /* Solution for overlapping buttons */
             .hero-btns { flex-direction: column; width: 100%; gap: 12px; }
-            .btn { width: 100%; max-width: 300px; margin-left: 0 !important; }
-            
+            .btn { width: 100%; max-width: 300px; }
             .calculator-card { padding: 30px 20px; }
             .price-display span { font-size: 2.5rem; }
             .contact-info { font-size: 1.5rem; }
@@ -112,11 +117,11 @@
 <body>
 
 <nav>
-    <a href="/" class="logo">BOGDAN<span>BIȚĂ</span></a>
+    <a href="/" class="logo">PAGINI<span>SIMPLE</span></a>
     <div class="nav-links">
         <a href="#de-ce">Beneficii</a>
         <a href="#modele">Portofoliu</a>
-        <a href="#calculator">Calculator</a>
+        <a href="#calculator">Prețuri</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
@@ -153,55 +158,71 @@
     </div>
 </section>
 
-<section id="cine">
-    <h2>Domenii de activitate</h2>
-    <div class="tags-container" data-aos="zoom-in">
-        <span class="tag-pill">Electricieni</span>
-        <span class="tag-pill">Frizerii</span>
-        <span class="tag-pill">Barbershops</span>
-        <span class="tag-pill">Beauty & Nails</span>
-        <span class="tag-pill">Cabinete Medicale</span>
-        <span class="tag-pill">Veterinari</span>
-        <span class="tag-pill">Instalatori</span>
-        <span class="tag-pill">Renovări</span>
-    </div>
-</section>
-
 <section id="modele">
-    <span class="section-tag">Modele</span>
+    <span class="section-tag">Portofoliu</span>
     <h2>Lucrări Recente</h2>
     <div class="portfolio-grid">
         <div class="port-item" data-aos="fade-up">
             <h3>Frizerie Canină</h3>
+            <p>Design modern și cald pentru servicii de pet care.</p>
             <a href="https://bubu-pet-care.base44.app/" target="_blank" class="port-link">Vezi Site <i class="fas fa-external-link-alt"></i></a>
         </div>
         <div class="port-item" data-aos="fade-up" data-aos-delay="100">
             <h3>Electrician Autorizat</h3>
+            <p>Focus pe profesionalism și intervenții rapide.</p>
             <a href="https://stalwart-electro-pro-fix.base44.app/" target="_blank" class="port-link">Vezi Site <i class="fas fa-external-link-alt"></i></a>
         </div>
         <div class="port-item" data-aos="fade-up" data-aos-delay="200">
             <h3>Cabinet Veterinar</h3>
+            <p>Site medical complet cu structură clară de servicii.</p>
             <a href="https://moonveterinary.ro/" target="_blank" class="port-link">Vezi Site <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="port-item" data-aos="fade-up">
+            <h3>Eco Clean Land</h3>
+            <p>Prezentare servicii de curățenie industrială și domestică.</p>
+            <a href="https://eco-clean-land.base44.app/" target="_blank" class="port-link">Vezi Site <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="port-item" data-aos="fade-up" data-aos-delay="100">
+            <h3>Barber Shop</h3>
+            <p>Stil clasic și elegant pentru frizerii de top.</p>
+            <a href="#" class="port-link">În curând <i class="fas fa-lock"></i></a>
+        </div>
+        <div class="port-item" data-aos="fade-up" data-aos-delay="200">
+            <h3>Instalator Non-Stop</h3>
+            <p>Landing page optimizat pentru conversie și apeluri.</p>
+            <a href="#" class="port-link">În curând <i class="fas fa-lock"></i></a>
         </div>
     </div>
 </section>
 
 <section id="calculator">
-    <span class="section-tag">Prețuri</span>
-    <h2>Calculator Estimativ</h2>
+    <span class="section-tag">Calculator Preț</span>
+    <h2>Personalizează Proiectul</h2>
     <div class="calculator-card" data-aos="zoom-in">
         <div class="calc-row">
-            <label>Pachet Site One-Page (Baza)</label>
-            <span>600 LEI</span>
+            <label>Pachet One-Page (Baza)</label>
+            <span style="font-weight: 800;">600 LEI</span>
         </div>
+        
+        <div class="calc-row">
+            <label>Pagini extra (+250 LEI/pag)</label>
+            <div class="stepper">
+                <button class="step-btn" onclick="updatePages(-1)">-</button>
+                <span id="page-count">0</span>
+                <button class="step-btn" onclick="updatePages(1)">+</button>
+            </div>
+        </div>
+
         <div class="calc-row">
             <label>Optimizare SEO (+200 LEI)</label>
-            <input type="checkbox" class="price-opt" data-price="200">
+            <input type="checkbox" class="price-opt" data-price="200" onchange="calculate()">
         </div>
+        
         <div class="calc-row">
-            <label>Buton WhatsApp Direct (+100 LEI)</label>
-            <input type="checkbox" class="price-opt" data-price="100">
+            <label>Configurare Domeniu/Email (+100 LEI)</label>
+            <input type="checkbox" class="price-opt" data-price="100" onchange="calculate()">
         </div>
+
         <div class="price-display">
             <p>TOTAL ESTIMATIV</p>
             <span id="total-price">600 LEI</span>
@@ -214,7 +235,7 @@
         <h2>Ești gata pentru noul tău site?</h2>
         <a href="tel:0726914400" class="contact-info">0726.914.400</a>
         <br>
-        <a href="https://wa.me/40726914400" class="btn whatsapp-btn">
+        <a href="https://wa.me/40726914400" target="_blank" class="whatsapp-btn">
             <i class="fab fa-whatsapp"></i> Scrie pe WhatsApp
         </a>
     </div>
@@ -222,30 +243,36 @@
 
 <footer>
     <p>&copy; 2026 PaginiSimple.com - Creat de Biță Bogdan.</p>
+    <a href="privacy.html">Privacy Policy</a>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });
-    
-    const checkboxes = document.querySelectorAll('.price-opt');
-    const displayTotal = document.getElementById('total-price');
-    const basePrice = 600;
 
-    function calculate() {
-        let total = basePrice;
-        checkboxes.forEach(cb => { if (cb.checked) total += parseInt(cb.getAttribute('data-price')); });
-        displayTotal.innerText = total + ' LEI';
+    let extraPages = 0;
+    const basePrice = 600;
+    const pricePerPage = 250;
+
+    function updatePages(val) {
+        extraPages += val;
+        if (extraPages < 0) extraPages = 0;
+        document.getElementById('page-count').innerText = extraPages;
+        calculate();
     }
 
-    document.querySelectorAll('.calc-row').forEach(row => {
-        row.addEventListener('click', function(e) {
-            const cb = this.querySelector('input[type="checkbox"]');
-            if (cb && e.target !== cb) { cb.checked = !cb.checked; calculate(); }
+    function calculate() {
+        let total = basePrice + (extraPages * pricePerPage);
+        const checkboxes = document.querySelectorAll('.price-opt');
+        
+        checkboxes.forEach(cb => {
+            if (cb.checked) {
+                total += parseInt(cb.getAttribute('data-price'));
+            }
         });
-    });
 
-    checkboxes.forEach(cb => { cb.addEventListener('change', calculate); });
+        document.getElementById('total-price').innerText = total + ' LEI';
+    }
 </script>
 
 </body>
