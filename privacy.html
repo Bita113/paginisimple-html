@@ -70,9 +70,6 @@
             border-radius: 24px;
         }
 
-        /* Ascundem limba care nu este selectată */
-        [lang="en"] { display: none; }
-
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -82,110 +79,101 @@
         }
 
         ul { padding-left: 20px; }
+        .highlight { color: #fff; font-weight: 600; }
     </style>
 </head>
 <body>
 
     <div class="header-nav">
-        <a href="index.html" class="back-link">← Acasă / Home</a>
+        <a href="/" class="back-link">← Acasă / Home</a>
         <div class="lang-switch">
-            <button class="lang-btn active" onclick="setLanguage('ro')">Română</button>
-            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            <button id="btn-ro" class="lang-btn active" onclick="setLanguage('ro')">Română</button>
+            <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">English</button>
         </div>
     </div>
 
     <div class="container">
-        <div id="content-ro" lang="ro">
+        <div id="content-ro">
             <h1>Politică de Confidențialitate</h1>
             <p>Ultima actualizare: Februarie 2026</p>
 
-            <p>La <strong>Pagini Simple</strong>, administrat de Bogdan, punem preț pe confidențialitatea datelor tale. Această politică explică modul în care gestionăm informațiile colectate prin intermediul Agentului nostru AI pe Facebook Messenger și serviciile noastre digitale.</p>
+            <p>La <span class="highlight">Pagini Simple</span> (paginisimple.com), administrat de Bogdan, protecția datelor tale este o prioritate. Această politică explică modul în care gestionăm informațiile prin serviciile noastre și prin Agentul AI activ pe pagina de Facebook <span class="highlight">"Pagini Web Simple Pentru Afaceri Locale"</span>.</p>
 
-            <h2>1. Informații Colectate</h2>
-            <p>Colectăm doar informațiile pe care ni le oferi voluntar prin Messenger:</p>
+            <h2>1. Informații Colectate prin Facebook Messenger</h2>
+            <p>Atunci când interacționezi cu Agentul nostru AI pe Messenger, colectăm:</p>
             <ul>
-                <li>Conținutul mesajelor și întrebările tale.</li>
-                <li>Informații din profilul public oferite de Meta (cum ar fi numele tău) pentru a personaliza conversația.</li>
+                <li><span class="highlight">Conținutul mesajelor:</span> Întrebările și detaliile pe care ni le transmiți voluntar.</li>
+                <li><span class="highlight">Date de profil public:</span> Numele și prenumele (furnizate de Meta) pentru a-ți putea răspunde personalizat.</li>
+                <li><span class="highlight">PSID (Page Scoped ID):</span> Un identificator numeric unic pentru a menține continuitatea conversației.</li>
             </ul>
 
-            <h2>2. Cum Folosim Informațiile</h2>
-            <p>Datele tale sunt folosite strict pentru:</p>
+            <h2>2. Procesarea AI (OpenAI)</h2>
+            <p>Pentru a oferi răspunsuri rapide, mesajele tale sunt procesate în timp real folosind tehnologia <span class="highlight">OpenAI</span>. Datele trimise către OpenAI prin API sunt folosite exclusiv pentru generarea răspunsului tău și nu sunt utilizate pentru antrenarea modelelor publice de inteligență artificială.</p>
+
+            <h2>3. Cum Folosim Datele</h2>
             <ul>
-                <li>A răspunde solicitărilor tale despre web design și servicii SEO.</li>
-                <li>Oferirea de asistență automatizată prin Agentul nostru AI.</li>
-                <li>Îmbunătățirea experienței de suport clienți.</li>
+                <li>Pentru a oferi consultanță automatizată despre servicii web design și SEO.</li>
+                <li>Pentru a facilita comunicarea între tine și echipa Pagini Simple.</li>
+                <li>Pentru îmbunătățirea calității asistenței tehnice.</li>
             </ul>
-            <p><strong>Notă:</strong> Mesajele sunt procesate de un sistem AI și pot fi revizuite de un operator uman pentru a asigura calitatea răspunsurilor.</p>
 
-            <h2>3. Partajarea și Protecția Datelor</h2>
-            <p><strong>NU vindem și nu partajăm</strong> datele tale cu terțe părți în scopuri de marketing. Informațiile sunt păstrate confidențial și folosite doar în scopul comunicării profesionale dintre noi.</p>
+            <h2>4. Partajarea Datelor</h2>
+            <p><strong>NU vindem</strong> și nu închiriem datele tale către terți. Datele tale pot fi accesate doar de platformele tehnice securizate pe care le folosim (Meta, Make.com, OpenAI) strict în scopul funcționării serviciului de chat.</p>
 
-            <h2>4. Contact</h2>
-            <p>Dacă ai întrebări, ne poți contacta:</p>
-            <p>
-                <strong>Email:</strong> contact@paginisimple.com<br>
-                <strong>Proprietar:</strong> PaginiSimple / Bogdan
-            </p>
+            <h2>5. Contact</h2>
+            <p>Poți solicita ștergerea datelor tale oricând la: <br>
+               <strong>Email:</strong> contact@paginisimple.com</p>
         </div>
 
-        <div id="content-en" lang="en">
+        <div id="content-en" style="display: none;">
             <h1>Privacy Policy</h1>
             <p>Last updated: February 2026</p>
 
-            <p>At <strong>Pagini Simple</strong>, operated by Bogdan, we value your privacy. This policy explains how we handle information collected through our Facebook Messenger AI Agent and our digital services.</p>
+            <p>At <span class="highlight">Pagini Simple</span> (paginisimple.com), operated by Bogdan, we value your privacy. This policy explains how we handle information through our digital services and our AI Agent on the Facebook Page <span class="highlight">"Pagini Web Simple Pentru Afaceri Locale"</span>.</p>
 
-            <h2>1. Information We Collect</h2>
-            <p>We only collect information that you voluntarily provide to us through Facebook Messenger:</p>
+            <h2>1. Information Collected via Messenger</h2>
+            <p>When interacting with our AI Agent, we collect:</p>
             <ul>
-                <li>The content of your messages and inquiries.</li>
-                <li>Public profile information provided by Meta (such as your name) to personalize the conversation.</li>
+                <li><span class="highlight">Message Content:</span> Inquiries and details you voluntarily provide.</li>
+                <li><span class="highlight">Public Profile:</span> Your name (provided by Meta) to personalize our response.</li>
+                <li><span class="highlight">PSID:</span> A unique identifier to maintain chat history.</li>
             </ul>
 
-            <h2>2. How We Use Your Information</h2>
-            <p>Your data is used strictly for:</p>
-            <ul>
-                <li>Responding to your requests regarding our web design and SEO services.</li>
-                <li>Providing automated assistance through our AI Agent.</li>
-                <li>Improving our customer service experience.</li>
-            </ul>
-            <p><strong>Note:</strong> Messages are processed by an AI system and may be reviewed by a human operator.</p>
+            <h2>2. AI Processing (OpenAI)</h2>
+            <p>Messages are processed in real-time using <span class="highlight">OpenAI</span> technology. Data sent via API is used solely to generate your response and is not used to train public AI models.</p>
 
-            <h2>3. Data Sharing and Protection</h2>
-            <p>We <strong>do not sell, trade, or share</strong> your personal data with third parties. Your information is used only within the scope of our business relationship.</p>
+            <h2>3. Data Sharing & Protection</h2>
+            <p>We <strong>do not sell</strong> your data. Your information is only processed through secure providers (Meta, Make.com, OpenAI) strictly to operate the automated chat service.</p>
 
             <h2>4. Contact Us</h2>
-            <p>If you have any questions, please contact us:</p>
-            <p>
-                <strong>Email:</strong> contact@paginisimple.com<br>
-                <strong>Owner:</strong> PaginiSimple / Bogdan
-            </p>
+            <p>Request data deletion at: <br>
+               <strong>Email:</strong> alex.bita@yahoo.com</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 paginisimple.com</p>
+        <p>&copy; 2026 paginisimple.com | Toate drepturile rezervate.</p>
     </footer>
 
     <script>
         function setLanguage(lang) {
-            // Actualizăm butoanele
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.innerText.toLowerCase().includes(lang === 'ro' ? 'român' : 'english')) {
-                    btn.classList.add('active');
-                }
-            });
+            const contentRo = document.getElementById('content-ro');
+            const contentEn = document.getElementById('content-en');
+            const btnRo = document.getElementById('btn-ro');
+            const btnEn = document.getElementById('btn-en');
 
-            // Afișăm/Ascundem conținutul
             if (lang === 'ro') {
-                document.getElementById('content-ro').style.display = 'block';
-                document.getElementById('content-en').style.display = 'none';
+                contentRo.style.display = 'block';
+                contentEn.style.display = 'none';
+                btnRo.classList.add('active');
+                btnEn.classList.remove('active');
             } else {
-                document.getElementById('content-ro').style.display = 'none';
-                document.getElementById('content-en').style.display = 'block';
+                contentRo.style.display = 'none';
+                contentEn.style.display = 'block';
+                btnRo.classList.remove('active');
+                btnEn.classList.add('active');
             }
         }
     </script>
-
 </body>
 </html>
